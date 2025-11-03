@@ -2,25 +2,48 @@
 
 ## Challenge 01
 
+Démarrage de la VM Ubuntu :
 ```bash
 vagrant up ubuntu
+```
+
+Connexion à la VM Ubuntu :
+```bash
 vagrant ssh ubuntu
 ```
 
-Dans la VM :
+Mise à jour des informations sur les paquets :
 ```bash
 sudo apt update
+```
+
+Recherche du paquet Ansible :
+```bash
 apt-cache search --names-only ansible
+```
+
+Installation d'Ansible :
+```bash
 sudo apt install -y ansible
+```
+
+Vérification de l'installation d'Ansible :
+```bash
 ansible --version
+```
+
+On quitte la VM :
+```bash
 exit
 ```
 
+Suppression de la VM :
 ```bash
 vagrant destroy -f ubuntu
 ```
 
 Résultat :
+Version d'Ansible installée :
 ```bash
 vagrant@ubuntu:~$ ansible --version
 ansible 2.10.8
@@ -34,26 +57,53 @@ ansible 2.10.8
 
 ## Challenge 02
 
+Démarrage de la VM Ubuntu :
 ```bash
 vagrant up ubuntu
+```
+
+Connexion à la VM Ubuntu :
+```bash
 vagrant ssh ubuntu
 ```
 
-Dans la VM :
+Mise à jour des informations sur les paquets :
 ```bash
 sudo apt update
+```
+
+Ajout du dépôt PPA pour Ansible :
+```bash
 sudo apt-add-repository ppa:ansible/ansible
+```
+
+Recherche du paquet Ansible :
+```bash
 apt-cache search --names-only ansible
+```
+
+Installation d'Ansible :
+```bash
 sudo apt install -y ansible
+```
+
+Vérification de l'installation d'Ansible :
+```bash
 ansible --version
+```
+
+On quitte la VM :
+```bash
 exit
 ```
 
+Suppression de la VM :
 ```bash
 vagrant destroy -f ubuntu
 ```
 
 Résultat :
+Version d'Ansible installée :
 ```bash
 vagrant@ubuntu:~$ ansible --version
 ansible [core 2.17.14]
@@ -70,27 +120,58 @@ ansible [core 2.17.14]
 
 ## Challenge 03
 
+Démarrage de la VM Ubuntu :
 ```bash
 vagrant up rocky
+```
+
+Connexion à la VM Ubuntu :
+```bash
 vagrant ssh rocky
 ```
 
-Dans la VM :
+Installation du paquet 'python3-pip' :
 ```bash
 sudo dnf install python3-pip
+```
+
+Initialisez l'environnement Virtualenv :
+```bash
 python3 -m venv ~/.venv/ansible
+```
+
+Lancez Virtualenv :
+```bash
 source ~/.venv/ansible/bin/activate
+```
+
+Mettez à jour PIP pour cette première utilisation :
+```bash
 pip install --upgrade pip
+```
+
+Installez Ansible :
+```bash
 pip install ansible
+```
+
+Vérification de l'installation d'Ansible :
+```bash
 ansible --version
+```
+
+On quitte la VM :
+```bash
 exit
 ```
 
+Suppression de la VM :
 ```bash
-vagrant destroy -f rocky
+vagrant destroy -f ubuntu
 ```
 
 Résultat :
+Version d'Ansible installée :
 ```bash
 (ansible) [vagrant@rocky ~]$ ansible --version
 ansible [core 2.15.13]
