@@ -7,7 +7,7 @@ vagrant up ubuntu
 vagrant ssh ubuntu
 ```
 
-In the vm :
+Dans la VM :
 ```bash
 sudo apt update
 apt-cache search --names-only ansible
@@ -20,7 +20,7 @@ exit
 vagrant destroy -f ubuntu
 ```
 
-Result :
+Résultat :
 ```bash
 vagrant@ubuntu:~$ ansible --version
 ansible 2.10.8
@@ -39,7 +39,7 @@ vagrant up ubuntu
 vagrant ssh ubuntu
 ```
 
-In the vm :
+Dans la VM :
 ```bash
 sudo apt update
 sudo apt-add-repository ppa:ansible/ansible
@@ -53,7 +53,7 @@ exit
 vagrant destroy -f ubuntu
 ```
 
-Result :
+Résultat :
 ```bash
 vagrant@ubuntu:~$ ansible --version
 ansible [core 2.17.14]
@@ -75,7 +75,7 @@ vagrant up rocky
 vagrant ssh rocky
 ```
 
-In the vm :
+Dans la VM :
 ```bash
 sudo dnf install python3-pip
 python3 -m venv ~/.venv/ansible
@@ -90,7 +90,7 @@ exit
 vagrant destroy -f rocky
 ```
 
-Result :
+Résultat :
 ```bash
 (ansible) [vagrant@rocky ~]$ ansible --version
 ansible [core 2.15.13]
