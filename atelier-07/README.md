@@ -673,6 +673,8 @@ suse | SUCCESS => {
 ```
 
 Enfin, affichez l'espace utilisé par la partition principale sur tous les Target Hosts. Que remarquez-vous ?
+Nous pouvons constater que l’espace disque des différentes VMs n’a pratiquement pas changé après toutes les opérations.
+Ainsi, nous pouvons en conclure que Ansible effectue seulement le nécessaire (installation de package, copie de fichier, ...), sans effectuer d'autres traitements non nécessaires et que l'exécution multiple d'une tâche ne modifie pas inutilement la machine.
 ```bash
 [vagrant@ansible ema]$  ansible all -m command -a "df -h /"
 debian | CHANGED | rc=0 >>
